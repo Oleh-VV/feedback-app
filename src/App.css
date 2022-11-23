@@ -1,19 +1,9 @@
 .App {
   text-align: center;
 }
-button {
-  margin: 100px auto;
-  display: block;
-}
-.DIVRED {
-  margin: 100px auto;
-  width: 40px;
-  background-color: red;
+h1 {
   text-align: center;
-}
-.DIVBLUE {
-  margin: 100px auto;
-  text-align: center;
-  width: 40px;
-  background-color: blue;
+  color: rgb(107, 8, 8);
+  background-color: rgb(246, 178, 77);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }

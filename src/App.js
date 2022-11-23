@@ -1,11 +1,19 @@
 import "./App.css";
 import React from "react";
+import FeedbackForm from "./components/feedback-form/FeedbackForm";
+import FeedbackList from "./components/feedback-list/FeedbackList";
+import Counters from "./components/counters/Counters";
 
 function App() {
   return (
-    <div>
-      <h1>QWERTY</h1>
-    </div>
+    <>
+      <h1>Feedback App</h1>
+      <div>
+        <FeedbackForm />
+        <Counters />
+        <FeedbackList />
+      </div>
+    </>
   );
 }
 

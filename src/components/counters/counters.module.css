@@ -1,0 +1,66 @@
+.counters_container {
+  width: 600px;
+  margin: 0 auto 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.review_counter_container {
+  color: rgb(68, 4, 4);
+  font-size: 18px;
+  font-weight: 600;
+}
+.review_counter {
+  font-weight: 700;
+}
+.average_rating_container {
+  color: rgb(68, 4, 4);
+  font-size: 18px;
+  font-weight: 600;
+}
+.average_rating {
+  font-weight: 700;
+}
+.sort_wrapper {
+  position: relative;
+  background-color: white;
+  padding: 3px 10px;
+  border-radius: 6px;
+  border: 1px solid rgb(216, 216, 96);
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4) inset,
+    -1px -1px 1px rgba(0, 0, 0, 0.4) inset;
+}
+.sort_wrapper ul {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  color: rgb(44, 43, 43);
+  background-color: white;
+  padding: 7px;
+  width: 150px;
+  display: none;
+  z-index: 99;
+}
+.sort_wrapper li {
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 10px;
+}
+.sort_wrapper li:hover {
+  background-color: rgb(185, 219, 249);
+}
+.sort_wrapper:hover ul {
+  display: block;
+}
+.sort_icon {
+  color: rgb(14, 14, 221);
+  width: 20px;
+  height: 20px;
+}
+.sort_by {
+  color: rgb(68, 4, 4);
+}

@@ -1,0 +1,90 @@
+.form {
+  width: 600px;
+  background-color: rgb(253, 246, 235);
+  margin: 20px auto;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3), -1px -1px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  padding-bottom: 10px;
+}
+.form h2 {
+  text-align: center;
+  padding: 10px;
+  color: rgb(47, 45, 45);
+}
+.rating_stars_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 40px;
+}
+.star_icon_wrapper {
+  position: relative;
+}
+.star_icon_wrapper:hover {
+  cursor: pointer;
+}
+.star_icon_wrapper:hover .star {
+  color: rgb(118, 87, 244);
+}
+.star_icon_wrapper:hover span {
+  color: rgb(240, 230, 44);
+}
+.star {
+  color: rgb(240, 230, 44);
+  height: 50px;
+  width: 50px;
+  transition: all 0.2s ease-in-out;
+}
+.star_icon_wrapper span {
+  position: absolute;
+  top: 14px;
+  left: 20px;
+  color: rgb(84, 12, 12);
+  font-weight: 600;
+}
+.star_icon_wrapper:first-child span {
+  left: 22px;
+}
+.star_icon_wrapper:last-child span {
+  left: 17px;
+}
+.form input[type="text"] {
+  width: 90%;
+  margin: 10px auto;
+  padding: 5px 10px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4) inset,
+    -1px -1px 1px rgba(0, 0, 0, 0.4) inset;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid rgb(164, 162, 162);
+  display: block;
+  font-size: 18px;
+}
+.input_container {
+  display: flex;
+  padding: 0 10px;
+  gap: 10px;
+}
+.form input[type="text"]:focus {
+  box-shadow: 3px 3px rgba(91, 80, 241, 0.4), -3px -3px rgba(91, 80, 241, 0.4);
+  outline: 2px solid rgb(108, 108, 245);
+}
+.form input[type="submit"] {
+  margin: 10px auto;
+  padding: 5px 20px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4) inset,
+    -1px -1px 1px rgba(0, 0, 0, 0.4) inset;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid rgb(164, 162, 162);
+  display: block;
+  font-size: 18px;
+  color: rgb(62, 62, 241);
+  font-weight: 600;
+  background-color: white;
+  transition: all 0.2s ease-in-out;
+}
+.form input[type="submit"]:hover {
+  background-color: rgb(104, 104, 243);
+  color: white;
+  cursor: pointer;
+}
