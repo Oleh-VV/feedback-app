@@ -88,3 +88,15 @@
   color: white;
   cursor: pointer;
 }
+@media screen and (max-width: 630px) {
+  .form {
+    width: 90%;
+  }
+  .rating_stars_container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .star_icon_wrapper {
+    width: 18%;
+  }
+}

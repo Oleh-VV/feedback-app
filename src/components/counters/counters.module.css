@@ -64,3 +64,8 @@
 .sort_by {
   color: rgb(68, 4, 4);
 }
+@media screen and (max-width: 630px) {
+  .counters_container {
+    width: 90%;
+  }
+}

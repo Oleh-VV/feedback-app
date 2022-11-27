@@ -1,11 +1,39 @@
 import React from "react";
 import styles from "./feedback-item.module.css";
+import { RiStarSFill, RiDeleteBin2Line } from "react-icons/ri";
+import { ReviewsContext } from "../context/ReviewsContext";
+import { useContext } from "react";
 
-function FeedbackItem() {
+function FeedbackItem({ item, style }) {
+  const { reviewList, setReviewList, setCurrentReviewList } =
+    useContext(ReviewsContext);
+  const { text, date, rate, id } = item;
+  function deleteItem(id) {
+    const list = [...reviewList];
+    const newlist = list.filter((item) => item.id !== id);
+    setReviewList(newlist);
+    setCurrentReviewList(newlist);
+  }
   return (
     <div className={styles.feedback_item}>
-      <div className={styles.review_date}>2022-12-08</div>
-      <p>Qwkjxhdkvjh ;rdjghakrj a;erkjgha;erjg aekrjgha;er ae;rkjghae;rh</p>
+      <div className={styles.review_header}>
+        {" "}
+        <div className={styles.review_date}>{date}</div>
+        <div className={styles.icons_container}>
+          {" "}
+          <RiDeleteBin2Line
+            className={styles.delete_icon}
+            onClick={() => deleteItem(id)}
+          />
+        </div>
+      </div>
+      <div className={styles.star_icon_out_wrapper}>
+        <div className={styles.star_icon_wrapper}>
+          <RiStarSFill className={styles.star} />
+          <span className={styles[style]}>{rate}</span>
+        </div>
+      </div>
+      <p>{text}</p>
     </div>
   );
 }

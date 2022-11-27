@@ -2,3 +2,8 @@
   width: 600px;
   margin: 0 auto;
 }
+@media screen and (max-width: 630px) {
+  .feedback_item_container {
+    width: 90%;
+  }
+}

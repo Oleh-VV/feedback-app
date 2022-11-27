@@ -1,5 +1,4 @@
 import "./App.css";
-import React from "react";
 import FeedbackForm from "./components/feedback-form/FeedbackForm";
 import FeedbackList from "./components/feedback-list/FeedbackList";
 import Counters from "./components/counters/Counters";
