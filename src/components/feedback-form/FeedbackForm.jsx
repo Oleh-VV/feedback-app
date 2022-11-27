@@ -27,7 +27,9 @@ function FeedbackForm() {
       alert("Choose the rating please");
       return;
     }
-    let date = `${new Date().getFullYear()}-${new Date().getMonth()}-${new Date().getDate()}`;
+    let date = `${new Date().getFullYear()}-${
+      new Date().getMonth() + 1
+    }-${new Date().getDate()}`;
     const newReview = { text: value, id: maxId + 1, date: date, rate: rate };
     setReviewList([...reviewList, newReview]);
     setCurrentReviewList([...reviewList, newReview]);
