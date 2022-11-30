@@ -28,11 +28,14 @@ function FeedbackForm() {
       new Date().getMonth() + 1
     }-${new Date().getDate()}`;
     const newReview = { text: value, date: date, rate: rate };
-    const response = await fetch("http://localhost:5000/feedback", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newReview),
-    });
+    const response = await fetch(
+      "https://flourishing-sopapillas-8c2366.netlify.app/feedback",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newReview),
+      }
+    );
     const data = await response.json();
     setReviewList([...reviewList, data]);
     setCurrentReviewList([...reviewList, data]);

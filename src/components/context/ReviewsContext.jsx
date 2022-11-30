@@ -10,7 +10,7 @@ export const ReviewsProvider = ({ children }) => {
   const fetchFeedback = async () => {
     setIsLoading(true);
     const response = await fetch(
-      "http://localhost:5000/feedback?_sort=id&_order=desc"
+      "https://flourishing-sopapillas-8c2366.netlify.app/feedback?_sort=id&_order=desc"
     );
     const data = await response.json();
     setReviewList(data);
