@@ -8,16 +8,13 @@ function FeedbackForm() {
   const { reviewList, setReviewList, setCurrentReviewList } =
     useContext(ReviewsContext);
   let stars = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  let maxId = 0;
-  reviewList.forEach((item) => {
-    if (item.id > maxId) maxId = item.id;
-  });
+  //let maxId = 0;  reviewList.forEach((item) => {    if (item.id > maxId) maxId = item.id;  });
   const [value, setValue] = useState("");
   const [rate, setRate] = useState(0);
   function chooseRating(rate) {
     setRate(rate);
   }
-  function onSubmitHandler(e) {
+  async function onSubmitHandler(e) {
     e.preventDefault();
     if (value.length < 10) {
       alert("Review must content at least 10 symbols");
@@ -30,9 +27,15 @@ function FeedbackForm() {
     let date = `${new Date().getFullYear()}-${
       new Date().getMonth() + 1
     }-${new Date().getDate()}`;
-    const newReview = { text: value, id: maxId + 1, date: date, rate: rate };
-    setReviewList([...reviewList, newReview]);
-    setCurrentReviewList([...reviewList, newReview]);
+    const newReview = { text: value, date: date, rate: rate };
+    const response = await fetch("http://localhost:5000/feedback", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newReview),
+    });
+    const data = await response.json();
+    setReviewList([...reviewList, data]);
+    setCurrentReviewList([...reviewList, data]);
     setValue("");
     setRate(0);
   }

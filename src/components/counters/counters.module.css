@@ -69,3 +69,9 @@
     width: 90%;
   }
 }
+@media screen and (max-width: 400px) {
+  .review_counter_container,
+  .average_rating_container {
+    font-size: 14px;
+  }
+}

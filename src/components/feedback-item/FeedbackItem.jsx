@@ -8,7 +8,9 @@ function FeedbackItem({ item, style }) {
   const { reviewList, setReviewList, setCurrentReviewList } =
     useContext(ReviewsContext);
   const { text, date, rate, id } = item;
-  function deleteItem(id) {
+  async function deleteItem(id) {
+    await fetch(`http://localhost:5000/feedback/${id}`, { method: "DELETE" });
+
     const list = [...reviewList];
     const newlist = list.filter((item) => item.id !== id);
     setReviewList(newlist);
