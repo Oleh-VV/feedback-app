@@ -9,10 +9,6 @@ function FeedbackItem({ item, style }) {
     useContext(ReviewsContext);
   const { text, date, rate, id } = item;
   async function deleteItem(id) {
-    await fetch(
-      `https://flourishing-sopapillas-8c2366.netlify.app/feedback/${id}`,
-      { method: "DELETE" }
-    );
     const list = [...reviewList];
     const newlist = list.filter((item) => item.id !== id);
     setReviewList(newlist);

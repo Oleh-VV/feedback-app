@@ -8,13 +8,16 @@ function FeedbackForm() {
   const { reviewList, setReviewList, setCurrentReviewList } =
     useContext(ReviewsContext);
   let stars = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  //let maxId = 0;  reviewList.forEach((item) => {    if (item.id > maxId) maxId = item.id;  });
+  let maxId = 0;
+  reviewList.forEach((item) => {
+    if (item.id > maxId) maxId = item.id;
+  });
   const [value, setValue] = useState("");
   const [rate, setRate] = useState(0);
   function chooseRating(rate) {
     setRate(rate);
   }
-  async function onSubmitHandler(e) {
+  function onSubmitHandler(e) {
     e.preventDefault();
     if (value.length < 10) {
       alert("Review must content at least 10 symbols");
@@ -24,23 +27,17 @@ function FeedbackForm() {
       alert("Choose the rating please");
       return;
     }
-    let date = `${new Date().getFullYear()}-${
-      new Date().getMonth() + 1
-    }-${new Date().getDate()}`;
-    const newReview = { text: value, date: date, rate: rate };
-    const response = await fetch(
-      "https://flourishing-sopapillas-8c2366.netlify.app/feedback",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newReview),
-      }
-    );
-    const data = await response.json();
-    setReviewList([...reviewList, data]);
-    setCurrentReviewList([...reviewList, data]);
+    let date = `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${
+      new Date().getDate() < 10
+        ? `0${new Date().getDate()}`
+        : new Date().getDate()
+    }`;
+    const newReview = { text: value, date: date, rate: rate, id: maxId + 1 };
+    setReviewList([...reviewList, newReview]);
+    setCurrentReviewList([...reviewList, newReview]);
     setValue("");
     setRate(0);
+    console.log(reviewList);
   }
 
   return (
